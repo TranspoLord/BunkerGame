@@ -1,0 +1,4 @@
+https://favtutor.com/blogs/cpp-dictionary
+
+possibly use a map with <name> to store <value> and <type> as a pair
+so room <name> with a key of <description> and a value of <"you are in the enterance...">
