@@ -4,7 +4,6 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
-#include "TextPrints.h"
 #include "nlohmann/json.hpp"
 using json = nlohmann::json;
 
@@ -18,13 +17,16 @@ public:
 	FileParser();
 	~FileParser();
 	
-	void setDebug(bool debug);
+	void SetDebug(bool debug);
+	void DebugPrint(string text);
 
 	bool ValidateFile(string fileName);
 	vector<string> SeperateString(string line, char delimiter);
 	json ParseFileFromJSON(string fileName);
-	bool AddDataToJSONFile(json data);
+	bool AddDataToJSONVector(json data);
 	int GetNumOfRoomsInBunker(int index);
+	json GetBunkerRoomData(int bunkerIndex, int roomIndex);
+	
 	//TODO: create function that gets json data from vector and prevents out of index errors
 	//TODO: add a way to get the number of rooms per bunker
 	//TODO: Assign an ID to each bunker
@@ -32,9 +34,10 @@ public:
 
 private:
 	
-	TextPrints tpPrint;
+	bool debug = false;
 	
-	vector<string> errorStrings;	
+	//TODO: Change to map
 	vector<json> bunkersRawJSONData;
+	
 };
 

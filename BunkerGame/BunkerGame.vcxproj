@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bunker.cpp" />
     <ClCompile Include="FileParser.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="InputValidation.cpp" />
@@ -134,9 +135,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="room.cpp" />
-    <ClCompile Include="TextPrints.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="bunker.h" />
     <ClInclude Include="FileParser.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="InputValidation.h" />
@@ -147,7 +148,6 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="room.h" />
     <ClInclude Include="testbunker.h" />
-    <ClInclude Include="TextPrints.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DefaultBunker.txt" />

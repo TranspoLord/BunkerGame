@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 #include "InputValidation.h"
-#include "TextPrints.h"
 #include "FileParser.h"
 #include "GameManager.h"
 
@@ -15,9 +14,14 @@ GameManager gameManager;
 
 int main(int argc, char){
 
-	gameManager.setDebug();
+	gameManager.EnableDebug();
 	gameManager.LoadBunkerDataIntoJSONVector(TestBunkerFile);
-	cout << gameManager.fp.GetNumOfRoomsInBunker(0);
+	cout << "Number of rooms in bunker 0: " << gameManager.fp.GetNumOfRoomsInBunker(0) << endl;
+	
+	cout << gameManager.fp.GetBunkerRoomData(0, 1);
+	
+	gameManager.PrintRoomData(0, "1");
+	
 	
 	return 0;
 };

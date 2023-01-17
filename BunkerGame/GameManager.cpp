@@ -3,13 +3,15 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "TextPrints.h"
 #include "GameManager.h"
 
 using namespace std;
 
 GameManager::GameManager()
 {
+	bunkers = vector<bunker>();
+	currentBunker = 0;
+	debug = false;
 }
 
 GameManager::~GameManager()
@@ -18,8 +20,8 @@ GameManager::~GameManager()
 
 bool GameManager::LoadBunkerDataIntoJSONVector(string fileName)
 {
-	if (fp.AddDataToJSONFile(fp.ParseFileFromJSON(fileName))) {
-		tp.PrintDebug("Raw JSON data added to JSON vector");
+	if (fp.AddDataToJSONVector(fp.ParseFileFromJSON(fileName))) {
+		DebugPrint("Raw JSON data added to JSON vector");
 		return true;
 	}
 	else {
@@ -28,7 +30,7 @@ bool GameManager::LoadBunkerDataIntoJSONVector(string fileName)
 	}
 }
 
-void GameManager::setDebug()
+void GameManager::EnableDebug()
 {
 	string input;
 
@@ -40,9 +42,48 @@ void GameManager::setDebug()
 		getline(cin, input);
 	}
 	if (input[0] == 'y' || input[0] == 'Y') {
-		tp.EnableDebug(true);
+		debug = true;
+		fp.SetDebug(true);
 	}
 	else if (input[0] == 'n' || input[0] == 'N') {
-		tp.EnableDebug(false);
+		debug = false;
+		fp.SetDebug(false);
 	}
 }
+
+bool GameManager::LoadRoomDataIntoRooms(int bunkerIndex)
+{
+	int numOfRooms = fp.GetNumOfRoomsInBunker(bunkerIndex);
+	for (int i = 0; i < numOfRooms; i++) {
+		//TODO: Set room data
+	}
+	return true;
+}
+
+void GameManager::SetCurrentBunker(int index)
+{
+	currentBunker = index;
+}
+
+bunker GameManager::GetCurrentBunker()
+{
+	bunker bunker;
+	bunker = bunkers[currentBunker];
+	return bunker;
+}
+
+void GameManager::DebugPrint(string text)
+{
+	if (debug) {
+		cout << text << endl;
+	}
+}
+
+void GameManager::PrintRoomData(int bunkerIndex, string roomIndex){
+	vector<string> temp = bunkers[bunkerIndex].GetRoomData(roomIndex);
+	DebugPrint("Room data: ");
+	for (int i = 0; i < temp.size(); i++) {
+		DebugPrint(temp[i]);
+	}
+}
+

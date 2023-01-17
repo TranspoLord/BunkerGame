@@ -33,13 +33,13 @@
     <ClCompile Include="GameManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextPrints.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="FileParser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="InputValidation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bunker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -54,9 +54,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="InputValidation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TextPrints.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="FileParser.h">
@@ -76,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="nlohmann\json_fwd.hpp">
       <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bunker.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

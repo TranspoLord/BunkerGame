@@ -12,17 +12,23 @@ class room
 {
 public:
 
+	room();
+	~room();
+
+	room SetRoomData(json data);
+	vector<string> GetRoomData();
+	
+	
+
 private:
 	
 	string roomID;
 	string name;
 	string description;
-	
 	string firstTimeEnter;
-	
-	string itemID;
-	
-	
+	string itemName;
+	bool baconItem;
+	string acceptedPickupKeywords;
 	string north;
 	string south;
 	string east;
