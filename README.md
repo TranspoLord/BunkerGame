@@ -1,1 +1,3 @@
 # BunkerGame
+
+This 'game' is a game based on an assignment done while at SNHU. After using Copilot for the first time, it basically renewed my desire to finish it, or at least continue it until my ADHD says otherwise. lol. I intend to try and finish this game and keep adding to it. I, also, intend to create a way for others to create their own levels (just text) and automatically import it into the game, with the game managing multiple levels. Users can create their levels using a JSON object file in a specific format. Eventually, this may lead to an actual game in Unreal or Unity, but thats at least a year from now. 
