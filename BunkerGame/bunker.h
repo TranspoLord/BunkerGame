@@ -13,14 +13,15 @@ public:
 	bunker();
 	~bunker();
 	
-	bool SetRoomData(string index, json data);
-	vector<string> GetRoomData(string index);
+	bool SetRawJSONData(json data);
+	json& GetRawJSONData();
 
 private:
 	
 	int bunkerID;
+	string bunkerName;
 	int numOfRooms;
-	map<string, room> roomData;
+	json rawBunkerData;
 	
 };
 

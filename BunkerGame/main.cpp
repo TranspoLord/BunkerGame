@@ -7,23 +7,34 @@
 using namespace std;
 
 string TestBunkerFile = "Test.json";
-
-InputValidation validation;
 GameManager gameManager;
 
+void AskDebug();
 
 int main(int argc, char){
 
-	gameManager.EnableDebug();
-	gameManager.LoadBunkerDataIntoJSONVector(TestBunkerFile);
-	cout << "Number of rooms in bunker 0: " << gameManager.fp.GetNumOfRoomsInBunker(0) << endl;
-	
-	gameManager.LoadRoomDataIntoRooms(0);
-	gameManager.PrintRoomData(0, "1");
-	
+	AskDebug();
 	
 	return 0;
 };
+
+void AskDebug() {
+	string input;
+
+	cout << "Enable debug prints?" << endl;
+	getline(cin, input);
+
+	while (!gameManager.iv.IsValidYesNo(input[0])) {
+		cout << "Enable debug prints?" << endl;
+		getline(cin, input);
+	}
+	if (input[0] == 'y' || input[0] == 'Y') {
+		gameManager.SetDebug(true);
+	}
+	else if (input[0] == 'n' || input[0] == 'N') {
+		gameManager.SetDebug(false);
+	}
+}
 
 
 

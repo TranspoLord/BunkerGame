@@ -13,26 +13,23 @@ public:
 	
 	GameManager();
 	~GameManager();
-	
+	InputValidation iv;
 	FileParser fp;
 	
 	void DebugPrint(string text);
-	void EnableDebug();
+	void SetDebug(bool set);
+
+	void LoadBunkerData(string fileName);
+	void MigrateBunkerJSONData(const json& data);
 	
-	bool LoadBunkerDataIntoJSONVector(string fileName);
-	bool LoadRoomDataIntoRooms(int bunkerIndex);
-	void SetCurrentBunker(int index);
-	bunker GetCurrentBunker();
-	void PrintRoomData(int bunkerIndex, string roomIndex);
 	
-private: 
+private:
 	
 	bool debug = false;
-	InputValidation iv;
-
-	//TODO: Start changing vectors to maps
-	vector<bunker> bunkers;
-	int currentBunker;
+	map<int, bunker> bunkers;
+	int numOfBunkers = 0;
+	
+	
 	
 };
 
