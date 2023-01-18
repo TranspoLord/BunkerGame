@@ -12,16 +12,23 @@ class bunker
 public:
 	bunker();
 	~bunker();
+
+	void SetDebug(bool condition);
+	void DebugPrint(string text);
 	
-	bool SetRawJSONData(json data);
+	bool SetRawJSONData(json data, int ID);
 	json& GetRawJSONData();
+	vector<json> ReturnRoomRawJSONData();
+
 
 private:
 	
+	bool debug;
 	int bunkerID;
 	string bunkerName;
 	int numOfRooms;
 	json rawBunkerData;
+	map<int, room> rooms;
 	
 };
 

@@ -15,8 +15,9 @@ public:
 	room();
 	~room();
 
-	room SetRoomData(json data);
-	vector<string> GetRoomData();
+	bool SetRoomJSONData(json data);
+	json GetRawJSONData();
+	json& GetRoomRawJSONData();
 	
 	
 
@@ -33,6 +34,7 @@ private:
 	string south;
 	string east;
 	string west;
+	json rawJSONdata;
 	
 };
 

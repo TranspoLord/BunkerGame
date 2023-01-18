@@ -32,14 +32,30 @@ void GameManager::SetDebug(bool set)
 
 void GameManager::MigrateBunkerJSONData(const json &data) {
 	bunker tempBunker;
-	tempBunker.SetRawJSONData(data);
+	if (debug)
+		tempBunker.SetDebug(true);
+
+	if (tempBunker.SetRawJSONData(data, numOfBunkers)) {
+		DebugPrint("Bunker data succussfully migrated");
+	}
+	else {
+		DebugPrint("Error migrating bunker data");
+	}
+	
 	bunkers[numOfBunkers] = tempBunker;
-	DebugPrint(bunkers[numOfBunkers].GetRawJSONData().dump());
 	numOfBunkers++;
 }
 
 void GameManager::LoadBunkerData(string fileName)
 {
 	MigrateBunkerJSONData(fp.ParseFileToJSON(fileName));
+}
+
+void GameManager::PrintRawRoomJSONDataFromBunker(int index)
+{
+	vector<json> temp = bunkers[index].ReturnRoomRawJSONData();
+	for (int i = 0; i < temp.size(); i++) {
+		DebugPrint("Room: " + to_string(i+1) + "\n \n" + temp[i].dump() + "\n \n");
+	}
 }
 

@@ -21,6 +21,7 @@ public:
 
 	void LoadBunkerData(string fileName);
 	void MigrateBunkerJSONData(const json& data);
+	void PrintRawRoomJSONDataFromBunker(int index);
 	
 	
 private:
