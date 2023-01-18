@@ -18,8 +18,7 @@ int main(int argc, char){
 	gameManager.LoadBunkerDataIntoJSONVector(TestBunkerFile);
 	cout << "Number of rooms in bunker 0: " << gameManager.fp.GetNumOfRoomsInBunker(0) << endl;
 	
-	cout << gameManager.fp.GetBunkerRoomData(0, 1);
-	
+	gameManager.LoadRoomDataIntoRooms(0);
 	gameManager.PrintRoomData(0, "1");
 	
 	

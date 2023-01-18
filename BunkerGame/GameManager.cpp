@@ -54,8 +54,11 @@ void GameManager::EnableDebug()
 bool GameManager::LoadRoomDataIntoRooms(int bunkerIndex)
 {
 	int numOfRooms = fp.GetNumOfRoomsInBunker(bunkerIndex);
-	for (int i = 0; i < numOfRooms; i++) {
-		//TODO: Set room data
+	for (int i = 1; i <= numOfRooms; i++) {
+		DebugPrint("Loading room data into room vector");
+		DebugPrint("Room index: Room" + to_string(i));
+		DebugPrint("Data to load: " + fp.GetBunkerRoomData(bunkerIndex, i));
+		bunkers[bunkerIndex].SetRoomData("Room" + to_string(i), fp.GetBunkerRoomData(bunkerIndex, i));
 	}
 	return true;
 }
@@ -80,6 +83,10 @@ void GameManager::DebugPrint(string text)
 }
 
 void GameManager::PrintRoomData(int bunkerIndex, string roomIndex){
+	if (bunkers.empty()) {
+		cout << "No bunkers loaded" << endl;
+		return;
+	}
 	vector<string> temp = bunkers[bunkerIndex].GetRoomData(roomIndex);
 	DebugPrint("Room data: ");
 	for (int i = 0; i < temp.size(); i++) {

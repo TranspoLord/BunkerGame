@@ -21,4 +21,3 @@ vector<string> bunker::GetRoomData(string index)
 	vector<string> temp = roomData[index].GetRoomData();
 	return temp;
 }
-
