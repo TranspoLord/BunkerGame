@@ -15,26 +15,36 @@ public:
 	room();
 	~room();
 
+	void SetDebug(bool condition);
+	void DebugPrint(string text);
+
 	bool SetRoomJSONData(json data);
 	json GetRawJSONData();
 	json& GetRoomRawJSONData();
+	bool BuildRoom(int ID);
 	
 	
 
 private:
 	
-	string roomID;
+	json rawJSONdata;
+	
+	bool debug;
+	
+	bool baconItem;
+	int roomID;
+	
+	map<string, string> roomDetails;
+	
 	string name;
 	string description;
-	string firstTimeEnter;
 	string itemName;
-	bool baconItem;
 	string acceptedPickupKeywords;
 	string north;
 	string south;
 	string east;
 	string west;
-	json rawJSONdata;
+	
 	
 };
 

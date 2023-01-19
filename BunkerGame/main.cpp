@@ -15,7 +15,6 @@ int main(int argc, char){
 
 	AskDebug();
 	gameManager.LoadBunkerData(TestBunkerFile);
-	gameManager.PrintRawRoomJSONDataFromBunker(0);
 	
 	return 0;
 };

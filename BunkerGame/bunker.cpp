@@ -34,9 +34,8 @@ bool bunker::SetRawJSONData(json data, int ID) {
 		bunkerName = rawBunkerData["Bunker Name"];
 		for (int i = 0; i < numOfRooms; i++) {
 			DebugPrint("Trying to load JSON into room: Room" + to_string(i + 1));
-			DebugPrint("JSON data follows:");
-			DebugPrint(rawBunkerData["Room" + to_string(i + 1)].dump());
 			rooms[i].SetRoomJSONData(rawBunkerData["Room" + to_string(i + 1)]);
+			rooms[i].SetDebug(debug);
 		}
 		return true;
 	}
@@ -52,6 +51,18 @@ vector<json> bunker::ReturnRoomRawJSONData() {
 		tempVector.push_back(rooms[i].GetRawJSONData());
 	}
 	return tempVector;
+}
+
+bool bunker::BuildRoomData() {
+	for (int i = 0; i < numOfRooms; i++) {
+		if(rooms[i].BuildRoom(i))
+			DebugPrint("Room " + to_string(i) + " built successfully \n\n");
+		else {
+			DebugPrint("Error building room " + to_string(i));
+			return false;
+		}
+	}
+	return true;
 }
 
 

@@ -19,6 +19,7 @@ public:
 	bool SetRawJSONData(json data, int ID);
 	json& GetRawJSONData();
 	vector<json> ReturnRoomRawJSONData();
+	bool BuildRoomData();
 
 
 private:
