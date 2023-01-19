@@ -62,5 +62,34 @@ bool room::BuildRoom(int ID) {
 		}
 		DebugPrint(x.first + ": " + x.second);
 	}
+	if (CreateItem(rawJSONdata)) {
+		DebugPrint("Item created successfully");
+	}
+	else {
+		DebugPrint("Error creating item");
+	}
+		
 	return true;
+}
+
+bool room::CreateItem(json &data) {
+	item tempItem;
+	tempItem.SetDebug(debug);
+	tempItem.SetDescription(data["Item Description"].dump());
+	tempItem.SetName(data["Item Name"].dump());
+	tempItem.SetID(itemsInRoom);
+	tempItem.SetAcceptedPickupKeywords(data["Accepted Pickups"].dump());
+	tempItem.SetItemBacon(data["Bacon Item?"].dump());
+	tempItem.SetItemAlreadyAcquired(data["Item Acquired"].dump());
+	tempItem.SetItemNeededToGet(data["Item Needed"].dump());
+	tempItem.SetPickupDesc(data["Item Pickup"].dump());
+	
+	roomItems.push_back(tempItem);
+	
+	if (roomItems.at(itemsInRoom).GetName() != "NULL") {
+		baconItem = true;
+		itemsInRoom++;
+		return true;
+	}
+	return false;
 }

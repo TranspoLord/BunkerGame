@@ -21,6 +21,14 @@ public:
 
 	void LoadBunkerData(string fileName);
 	void PrintRawRoomJSONDataFromBunker(int index);
+
+	//void PrintBunkerData(int index);
+
+	void AskCreateBunkerFromFile();
+	void SelectBunkerInt();
+	//void SelectBunkerString(string name);
+	void MainMenu();
+	//TODO: Create a function that tests if a bunker has been created already
 	
 	
 private:
@@ -28,7 +36,8 @@ private:
 	bool debug = false;
 	map<int, bunker> bunkers;
 	int numOfBunkers = 0;
-	
+	int selectedBunker = 0;
+	vector<string> bunkerFileNames;
 	
 	
 };

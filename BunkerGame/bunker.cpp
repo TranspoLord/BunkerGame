@@ -21,7 +21,6 @@ void bunker::DebugPrint(string text) {
 	}
 }
 
-
 bool bunker::SetRawJSONData(json data, int ID) {
 	rawBunkerData = data;
 	if (rawBunkerData.empty()) {
@@ -64,5 +63,18 @@ bool bunker::BuildRoomData() {
 	}
 	return true;
 }
+
+int bunker::GetBunkerID() {
+	return bunkerID;
+}
+
+string bunker::GetBunkerName() {
+	return bunkerName;
+}
+
+int bunker::GetNumOfRooms() {
+	return numOfRooms;
+}
+
 
 

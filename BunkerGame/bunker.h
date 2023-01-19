@@ -20,6 +20,9 @@ public:
 	json& GetRawJSONData();
 	vector<json> ReturnRoomRawJSONData();
 	bool BuildRoomData();
+	int GetBunkerID();
+	string GetBunkerName();
+	int GetNumOfRooms();
 
 
 private:

@@ -2,6 +2,7 @@
 #include <string>
 #include <fstream>
 #include "nlohmann/json.hpp"
+#include "item.h"
 using json = nlohmann::json;
 
 using namespace std;
@@ -22,7 +23,7 @@ public:
 	json GetRawJSONData();
 	json& GetRoomRawJSONData();
 	bool BuildRoom(int ID);
-	
+	bool CreateItem(json &data);
 	
 
 private:
@@ -33,9 +34,12 @@ private:
 	
 	bool baconItem;
 	int roomID;
+	int itemsInRoom = 0;
 	
 	map<string, string> roomDetails;
 	
+	vector<item> roomItems;
+
 	string name;
 	string description;
 	string itemName;

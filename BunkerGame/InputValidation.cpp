@@ -41,7 +41,10 @@ bool InputValidation::IsValidYesNo(char input) {
 
 bool InputValidation::IsValidNumber(string input) {
 	for (char c : input) {
-		if (!isdigit(c)) cout << error; return false;
+		if (!isdigit(c)) {
+			cout << error;
+			return false;
+		}
 	}
 	return true;
 }
