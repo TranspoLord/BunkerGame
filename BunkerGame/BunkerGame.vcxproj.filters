@@ -50,9 +50,6 @@
     <ClInclude Include="item.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="mainmenu.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="InputValidation.h">
       <Filter>Header Files</Filter>
     </ClInclude>

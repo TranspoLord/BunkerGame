@@ -142,7 +142,6 @@
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="InputValidation.h" />
     <ClInclude Include="item.h" />
-    <ClInclude Include="mainmenu.h" />
     <ClInclude Include="nlohmann\json.hpp" />
     <ClInclude Include="nlohmann\json_fwd.hpp" />
     <ClInclude Include="player.h" />
