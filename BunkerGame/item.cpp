@@ -11,7 +11,7 @@ item::item()
 
 item::~item()
 {
-}
+} 
 
 void item::SetDebug(bool condition) {
 	debug = condition;

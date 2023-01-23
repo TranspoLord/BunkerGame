@@ -32,7 +32,7 @@ void room::DebugPrint(string text) {
 		cout << "ROOM DEBUG: " + text << endl;
 	}
 }
-
+ 
 json& room::GetRoomRawJSONData() {
 	return rawJSONdata;
 }

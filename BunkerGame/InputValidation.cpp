@@ -7,7 +7,7 @@ InputValidation::InputValidation() {
 }
 
 InputValidation::~InputValidation() {
-}
+} 
 
 bool InputValidation::IsValidAlphaString(string input) {
 	for (char c : input) {

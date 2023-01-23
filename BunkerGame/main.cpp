@@ -12,7 +12,7 @@ GameManager gameManager;
 int main(int argc, char){
 
 	gameManager.MainMenu();
-	
+	 
 	return 0;
 };
 

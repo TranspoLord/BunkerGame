@@ -5,7 +5,7 @@ using namespace std;
 
 class InputValidation {
 
-public:
+public: 
 
 	InputValidation();
 	~InputValidation();

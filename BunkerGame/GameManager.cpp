@@ -6,7 +6,7 @@
 #include "GameManager.h"
 
 using namespace std;
-
+ 
 GameManager::GameManager()
 {
 	debug = false;
